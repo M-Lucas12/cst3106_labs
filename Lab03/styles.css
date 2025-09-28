@@ -15,7 +15,11 @@ footer {
 }
 /* Highlight first item in each list */
 ul li:first-child {
+
+    font-weight: bold;
+
     font-weight: normal;
+
 }
 
 /* Make the first letter of each paragraph stand out slightly */
