@@ -1,77 +1,100 @@
+/* ===========================
+   🎨 Design System Variables
+   Defines reusable color tokens for the entire site
+   =========================== */
 :root {
-    --primary-color:#007BFF;
-    --text-color:#333;
-    --accent-color:#555;
-    --background-color:#fff;
-    --highlight-color:#F5F5F5;
-    --border-color:#ddd;
+    --primary-color: #007BFF;      /* Bright blue for headings, links, and accents */
+    --text-color: #333333;         /* Dark gray for body text */
+    --accent-color: #555555;       /* Medium gray for borders or sub-text */
+    --background-color: #FFFFFF;   /* White background for the main page */
+    --highlight-color: #F5F5F5;    /* Light gray used for section backgrounds */
 }
 
-/* Base */
-body{
-    font-family:Arial,sans-serif;
-    color:var(--text-color);
-    background:var(--background-color);
-    margin:0;
-    line-height:1.6;
+/* ===========================
+    Base Layout & Typography
+   Applies general fonts and colors to all text content
+   =========================== */
+body {
+    font-family: Arial, sans-serif;               /* Clean, readable sans-serif font */
+    color: var(--text-color);                     /* Use the global text color */
+    background-color: var(--background-color);    /* Keep a clean white background */
 }
 
-/* Header */
-header{
-    background:#f0f0f0;
-    text-align:center;
-    padding:25px 10px;
-    border-bottom:2px solid var(--accent-color);
-}
-header h1{
-    font-family:'Trebuchet MS',sans-serif;
-    color:var(--primary-color);
-    margin-bottom:5px;
+/* Headings use a distinct font and centered alignment */
+h1, h2 {
+    font-family: 'Trebuchet MS', sans-serif;      /* Bold modern heading font */
+    text-align: center;                           /* Center all major titles */
 }
 
-/* Nav */
-nav{
-    background:#444;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-    padding:10px 0;
-}
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    transition:color .3s;
-}
-nav a:hover{color:var(--primary-color);}
-
-/* Sections */
-section{
-    background:var(--highlight-color);
-    border:1px solid var(--border-color);
-    border-radius:8px;
-    padding:20px;
-    margin:15px auto;
-    max-width:800px;
-}
-section h2{
-    color:var(--primary-color);
-    text-align:center;
-    font-family:'Trebuchet MS',sans-serif;
+/* ===========================
+   Header Styling
+   Defines the appearance of the top banner
+   =========================== */
+header {
+    background-color: #f0f0f0;                    /* Light gray banner background */
+    text-align: center;                           /* Center all header content */
+    padding: 20px;                                /* Add breathing space */
+    border-bottom: 2px solid var(--accent-color); /* Separate header from body */
 }
 
-/* Footer */
-footer{
-    background:#f0f0f0;
-    text-align:center;
-    padding:12px;
-    font-size:14px;
-    border-top:2px solid var(--accent-color);
+/* ===========================
+    Navigation Bar
+   Horizontal layout with hover effects
+   =========================== */
+nav {
+    background-color: #444;                       /* Dark background for contrast */
+    display: flex;                                /* Arrange links horizontally */
+    justify-content: center;                      /* Center the group */
+    gap: 15px;                                    /* Equal spacing between links */
+    padding: 10px 0;                              /* Vertical padding only */
 }
 
-/* Responsive */
-@media(max-width:768px){
-    nav{flex-direction:column;align-items:center;}
-    section{width:90%;}
+/* Navigation links default state */
+nav a {
+    color: white;                                 /* White text for readability */
+    text-decoration: none;                        /* Remove underlines */
+}
+
+/* Navigation link hover state */
+nav a:hover {
+    color: var(--primary-color);                  /* Blue highlight on hover */
+}
+
+/* ===========================
+    Section Styling
+   Wraps each resume block with subtle background and spacing
+   =========================== */
+section {
+    background-color: var(--highlight-color);     /* Light gray section background */
+    border: 1px solid #ddd;                       /* Thin border for definition */
+    border-radius: 8px;                           /* Rounded corners */
+    padding: 20px;                                /* Inner spacing for text */
+    margin: 15px auto;                            /* Outer spacing between sections */
+    max-width: 800px;                             /* Restrict width for readability */
+}
+
+/* ===========================
+   ️ Footer
+   Simple bottom bar with smaller text
+   =========================== */
+footer {
+    background-color: #f0f0f0;                    /* Match header color */
+    text-align: center;                           /* Center text horizontally */
+    padding: 10px;                                /* Add space inside footer */
+    font-size: 14px;                              /* Slightly smaller font size */
+}
+
+/* ===========================
+    Responsive Design
+   Adjusts layout for screens smaller than 768px
+   =========================== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;                     /* Stack nav links vertically */
+        align-items: center;                        /* Center the column layout */
+    }
+
+    section {
+        width: 90%;                                 /* Reduce width for mobile view */
+    }
 }

@@ -34,16 +34,3 @@ The resume webpage follows a **single-page structure** divided into:
   --background-color: #FFFFFF;
   --highlight-color: #F5F5F5;
 }
-
----
-
-## 🖋 Typography
-| Element | Font | Style |
-|----------|-------|--------|
-| Headers | 'Trebuchet MS', sans-serif | Bold, centered |
-| Body | Arial, sans-serif | Normal |
-| Accent | "Times New Roman", Times, serif | Italic for quotes |
-
-```css
-body { font-family: Arial, sans-serif; }
-h1, h2 { font-family: 'Trebuchet MS', sans-serif; text-align: center; }
