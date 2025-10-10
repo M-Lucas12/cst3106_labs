@@ -1,0 +1,175 @@
+/* ==== Global Layout ==== */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background: linear-gradient(to bottom right, #eaf5ff, #ffffff);
+    color: #004B87;
+}
+
+header {
+    background-color: #5DA9E9;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Lab 5 subtitle under the title */
+header h3 {
+    margin-top: 5px;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #eaf5ff;
+    letter-spacing: 0.5px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;   /* even heights */
+    height: calc(100vh - 120px);
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+/* ==== Left Panel (Dice) ==== */
+#dice-panel {
+    flex: 1;
+    background-color: #F2F4F7;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+#dice-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.die {
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border: 2px solid #5DA9E9;
+
+    /* Dice face grid */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 10px;
+    box-sizing: border-box;
+    justify-items: center;
+    align-items: center;
+
+    /* Hover animation base */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+/* Hover lift effect */
+.die:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Pips */
+.die span {
+    width: 10px;
+    height: 10px;
+    background-color: #004B87;
+    border-radius: 50%;
+    opacity: 0;                    /* hidden by default */
+}
+
+/* Face mappings (grid spans are added in HTML in reading order 1..9) */
+.face1 span:nth-child(5) { opacity: 1; }
+
+.face2 span:nth-child(1),
+.face2 span:nth-child(9) { opacity: 1; }
+
+.face3 span:nth-child(1),
+.face3 span:nth-child(5),
+.face3 span:nth-child(9) { opacity: 1; }
+
+.face4 span:nth-child(1),
+.face4 span:nth-child(3),
+.face4 span:nth-child(7),
+.face4 span:nth-child(9) { opacity: 1; }
+
+.face5 span:nth-child(1),
+.face5 span:nth-child(3),
+.face5 span:nth-child(5),
+.face5 span:nth-child(7),
+.face5 span:nth-child(9) { opacity: 1; }
+
+/* ==== Right Panel (Scoreboard) ==== */
+#scoreboard {
+    flex: 1;
+    background-color: #F2F4F7;
+    border-radius: 16px;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+#scoreboard h2 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #5DA9E9;
+    color: white;
+    font-weight: 600;
+}
+
+td { color: #004B87; }
+
+tr:hover { background-color: #eaf5ff; }
+
+/* Total row */
+.total-row td {
+    background-color: #5DA9E9;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+/* ==== Footer ==== */
+footer {
+    background-color: #5DA9E9;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
