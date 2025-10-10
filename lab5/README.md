@@ -1,39 +1,34 @@
 # 🎲 Yatzy Game – Design Documentation
 
-## 1. Overview
-Yatzy is a five-dice game where players roll the dice up to three times per turn to make the best scoring combinations.
+## 1️⃣ Overview
+This project is a visual mock-up for the classic dice game **Yatzy**.  
+The goal is to create a calm, minimal, and relaxing web layout using **blue and white** tones.
 
-## 2. Rules Summary
-- Roll 5 dice at the start of each turn.
-- You can keep or reroll any dice (two rerolls maximum).
-- Each turn you must record a score in a category.
+## 2️⃣ Rules Summary
+- Players roll five dice up to three times per turn.
+- They may keep or re-roll any dice between rolls.
+- After each turn, a category must be scored.
 - The game ends when all categories are filled.
-- Highest total wins.
+- Highest total wins 🎉
 
-## 3. Design System
+## 3️⃣ Design System
 | Role | Color | Hex |
-|-------|--------|------|
-| Primary | Deep Blue | `#007BFF` |
-| Secondary | Gold | `#FFD700` |
-| Accent | Slate Gray | `#555555` |
+|------|--------|------|
+| Primary | Soft Sky Blue | `#5DA9E9` |
+| Secondary | Deep Blue | `#004B87` |
 | Background | White | `#FFFFFF` |
+| Accent | Light Gray | `#F2F4F7` |
 
-### Fonts
-- **Headings:** Poppins (sans-serif)
-- **Body:** Roboto (sans-serif)
+**Fonts**
+- Headings → `Poppins, sans-serif`
+- Body → `Roboto, sans-serif`
 
-**Rationale:** Blue and gold give a playful but professional look. Slate gray balances contrast and white keeps it clean.
+**Rationale:** Blue tones feel peaceful and clean against white. Soft gray accents keep the layout balanced and relaxing.
 
-## 4. Dice Design
-- Square dice (80 × 80 px)
-- Rounded corners (12 px)
-- White background with black pips
-- Subtle shadow for depth
+## 4️⃣ Layout Plan
+| Panel | Content |
+|--------|-----------|
+| Left Panel | Five dice in one row inside a tall panel for future features |
+| Right Panel | Scoreboard table showing Category / Scoring Rule / Points |
 
-## 5. Game Layout and Flow
-The game mock-up includes:
-- Title header
-- Dice area with five dice elements
-- Buttons for roll / reset
-- Scorecard table to record scores
-- Footer with total score section
+The mock-up focuses on structure and visual design, not game logic.
