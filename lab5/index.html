@@ -8,22 +8,49 @@
 <body>
 <header>
     <h1>🎲 Yatzy Game</h1>
+    <h3>Lab 05 </h3>
 </header>
 
 <main class="container">
-    <!-- 🎲 Left panel: Dice -->
+    <!-- 🎲 Left panel -->
     <section id="dice-panel">
         <h2>Dice Panel</h2>
+
         <div id="dice-row">
-            <div class="die"></div>
-            <div class="die"></div>
-            <div class="die"></div>
-            <div class="die"></div>
-            <div class="die"></div>
+            <!-- Face 1 -->
+            <div class="die face1">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+            </div>
+            <!-- Face 2 -->
+            <div class="die face2">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+            </div>
+            <!-- Face 3 -->
+            <div class="die face3">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+            </div>
+            <!-- Face 4 -->
+            <div class="die face4">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+            </div>
+            <!-- Face 5 -->
+            <div class="die face5">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+            </div>
         </div>
     </section>
 
-    <!-- 📊 Right panel: Scoreboard -->
+    <!-- 📊 Right panel -->
     <section id="scoreboard">
         <h2>Scoreboard</h2>
         <table>
@@ -32,26 +59,20 @@
                 <th>Scoring Rule</th>
                 <th>Points</th>
             </tr>
-            <tr>
-                <td>Ones</td>
-                <td>Sum of 1s rolled</td>
-                <td>–</td>
-            </tr>
-            <tr>
-                <td>Twos</td>
-                <td>Sum of 2s rolled</td>
-                <td>–</td>
-            </tr>
-            <tr>
-                <td>Threes</td>
-                <td>Sum of 3s rolled</td>
-                <td>–</td>
-            </tr>
-            <tr>
-                <td>Yatzy</td>
-                <td>All five dice same number</td>
-                <td>50</td>
-            </tr>
+            <tr><td>Ones</td><td>Sum of all 1s rolled</td><td>0</td></tr>
+            <tr><td>Twos</td><td>Sum of all 2s rolled</td><td>0</td></tr>
+            <tr><td>Threes</td><td>Sum of all 3s rolled</td><td>0</td></tr>
+            <tr><td>Fours</td><td>Sum of all 4s rolled</td><td>0</td></tr>
+            <tr><td>Fives</td><td>Sum of all 5s rolled</td><td>0</td></tr>
+            <tr><td>Sixes</td><td>Sum of all 6s rolled</td><td>0</td></tr>
+            <tr><td>Three of a Kind</td><td>Three dice same number → sum all dice</td><td>0</td></tr>
+            <tr><td>Four of a Kind</td><td>Four dice same number → sum all dice</td><td>0</td></tr>
+            <tr><td>Full House</td><td>Three of a kind + pair → sum all dice</td><td>0</td></tr>
+            <tr><td>Small Straight</td><td>Sequence 1-2-3-4-5</td><td>0</td></tr>
+            <tr><td>Large Straight</td><td>Sequence 2-3-4-5-6</td><td>0</td></tr>
+            <tr><td>Chance</td><td>Sum of all dice</td><td>0</td></tr>
+            <tr><td>Yatzy</td><td>All five dice same number</td><td>0</td></tr>
+            <tr class="total-row"><td colspan="2"><strong>Total</strong></td><td><strong>0</strong></td></tr>
         </table>
     </section>
 </main>
