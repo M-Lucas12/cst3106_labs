@@ -1,79 +1,100 @@
-/* General page style */
+/* ==== Global Layout ==== */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #ffffff;
-    color: #333;
-    text-align: center;
     margin: 0;
-    padding: 0;
+    background-color: #FFFFFF;
+    color: #004B87;
 }
 
 header {
-    background-color: #007BFF;
+    background-color: #5DA9E9;
     color: white;
+    text-align: center;
     padding: 20px 0;
-}
-
-h1 {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
+    letter-spacing: 1px;
 }
 
-/* Dice area layout */
-#dice-container {
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 120px);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* ==== Left Panel (Dice) ==== */
+#dice-panel {
+    flex: 1;
+    background-color: #F2F4F7;
+    border-radius: 16px;
+    padding: 20px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dice-row {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin: 40px 0;
+    gap: 15px;
+    margin-top: 40px;
 }
 
 .die {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     background-color: white;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    border: 2px solid #555555;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border: 2px solid #5DA9E9;
 }
 
-/* Buttons */
-.buttons button {
-    background-color: #FFD700;
-    border: none;
-    border-radius: 6px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 10px;
+/* ==== Right Panel (Scoreboard) ==== */
+#scoreboard {
+    flex: 1;
+    background-color: #F2F4F7;
+    border-radius: 16px;
+    padding: 20px;
+    margin-left: 10px;
+    overflow-y: auto;
 }
 
-.buttons button:hover {
-    background-color: #e6c200;
-}
-
-/* Scorecard section */
-#scorecard {
-    width: 300px;
-    margin: 0 auto 40px auto;
+#scoreboard h2 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
 }
 
 th {
-    background-color: #007BFF;
+    background-color: #5DA9E9;
     color: white;
+    font-weight: 600;
 }
 
+tr:hover {
+    background-color: #eaf5ff;
+}
+
+/* ==== Footer ==== */
 footer {
-    background-color: #f5f5f5;
+    background-color: #5DA9E9;
+    color: white;
+    text-align: center;
     padding: 10px 0;
-    color: #555;
+    font-size: 14px;
 }
