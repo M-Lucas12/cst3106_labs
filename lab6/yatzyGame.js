@@ -1,16 +1,15 @@
 // === Yatzy Game Module ===
-// This file connects the Dice and YatzyEngine modules
+// This file connects the Dice and YatzyEngine modules to control game flow
 
 import { Dice } from "./dice.js";
 import { YatzyEngine } from "./yatzyEngine.js";
 
-// This class manages the game flow and keeps track of rounds and score
-class YatzyGame {
+export class YatzyGame {
     constructor() {
         this.round = 1;           // current round number
         this.totalScore = 0;      // player's total score
         this.currentPlayer = 1;   // player turn tracker
-        this.dice = new Dice(5);  // create 5 dice
+        this.dice = new Dice(5);  // 5 dice
         this.engine = new YatzyEngine(); // scoring engine
     }
 
@@ -21,19 +20,19 @@ class YatzyGame {
         console.log("🎲 New Yatzy game started!");
     }
 
-    // Play one round: roll dice and display values
+    // Play one round
     playRound() {
         let result = this.dice.roll();
         console.log("Round " + this.round + " roll: " + result);
     }
 
-    // End current turn and move to next round
+    // End current turn
     endTurn() {
         console.log("End of round " + this.round);
         this.round++;
     }
 
-    // End the entire game and show the total score
+    // End game
     endGame() {
         console.log("Game Over! Final Score: " + this.totalScore);
     }

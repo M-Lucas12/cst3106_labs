@@ -1,8 +1,8 @@
 // === Yatzy Engine Module ===
-// This class will contain all the game rules and scoring functions
-class YatzyEngine {
+// This class defines the scoring rules and logic for the Yatzy game
+export class YatzyEngine {
     constructor() {
-        this.scores = {};   // to keep track of category scores
+        this.scores = {};   // store category scores
     }
 
     // Add up all dice values
@@ -56,7 +56,7 @@ class YatzyEngine {
         return dice.every(value => value === dice[0]);
     }
 
-    // Calculate the score for a chosen category
+    // Calculate score for selected category
     calculateScore(category, dice) {
         if (category === "Three of a Kind" && this.isThreeOfAKind(dice)) {
             return this.sumDice(dice);
