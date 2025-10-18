@@ -55,4 +55,19 @@ class YatzyEngine {
     isYatzy(dice) {
         return dice.every(value => value === dice[0]);
     }
+
+    // Calculate the score for a chosen category
+    calculateScore(category, dice) {
+        if (category === "Three of a Kind" && this.isThreeOfAKind(dice)) {
+            return this.sumDice(dice);
+        } else if (category === "Full House" && this.isFullHouse(dice)) {
+            return 25;
+        } else if (category === "Small Straight" && this.isSmallStraight(dice)) {
+            return 30;
+        } else if (category === "Yatzy" && this.isYatzy(dice)) {
+            return 50;
+        } else {
+            return 0;
+        }
+    }
 }
