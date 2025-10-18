@@ -1,12 +1,12 @@
 // === Dice Module ===
-// This class will handle the creation and rolling of dice values
-class Dice {
+// This class handles rolling dice and storing their values
+export class Dice {
     constructor(numDice) {
         this.numDice = numDice;   // number of dice to roll
-        this.values = [];         // store dice values
+        this.values = [];         // stores dice values
     }
 
-    // Roll all dice and store the random results
+    // Roll all dice and return random values 1–6
     roll() {
         this.values = [];
         for (let i = 0; i < this.numDice; i++) {

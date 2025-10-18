@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 06 – Yatzy Game Modules Test</title>
+</head>
+<body>
+<h1>🎲 Yatzy Game Test – Lab 06</h1>
+<p>Open your browser console (<strong>Right Click → Inspect → Console</strong>) to view the test output.</p>
+
+<script type="module">
+    import { Dice } from "./dice.js";
+    import { YatzyEngine } from "./yatzyEngine.js";
+    import { YatzyGame } from "./yatzyGame.js";
+
+    // Create a game and test methods
+    const game = new YatzyGame();
+
+    game.startNewGame();    // Start
+    game.playRound();       // Roll dice
+    game.endTurn();         // End turn
+    game.endGame();         // End game
+
+    // Test the engine scoring
+    const dice = new Dice(5);
+    const engine = new YatzyEngine();
+    const roll = dice.roll();
+    console.log("Test roll:", roll);
+    console.log("Yatzy score:", engine.calculateScore("Yatzy", roll));
+</script>
+</body>
+</html>
