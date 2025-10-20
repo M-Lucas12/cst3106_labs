@@ -1,32 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Lab 06 – Yatzy Game Modules Test</title>
+    <meta charset="UTF-8" />
+    <title>🎲 Yatzy Game – Modular Version</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<h1>🎲 Yatzy Game Test – Lab 06</h1>
-<p>Open your browser console (<strong>Right Click → Inspect → Console</strong>) to view the test output.</p>
 
-<script type="module">
-    import { Dice } from "./dice.js";
-    import { YatzyEngine } from "./yatzyEngine.js";
-    import { YatzyGame } from "./yatzyGame.js";
+<!-- ===== HEADER ===== -->
+<header>
+    <h1>🎲 Yatzy Game</h1>
+    <h3>Lab 06 – Modular JavaScript Design</h3>
+</header>
 
-    // Create a game and test methods
-    const game = new YatzyGame();
+<!-- ===== MAIN CONTAINER ===== -->
+<main class="container">
+    <!-- 🎲 LEFT PANEL -->
+    <section id="dice-panel">
+        <h2>Dice Panel</h2>
+        <div id="dice-row">
+            <div class="die face1"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="die face2"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="die face3"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="die face4"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="die face5"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+    </section>
 
-    game.startNewGame();    // Start
-    game.playRound();       // Roll dice
-    game.endTurn();         // End turn
-    game.endGame();         // End game
+    <!-- 📊 RIGHT PANEL -->
+    <section id="scoreboard">
+        <h2>Scoreboard</h2>
+        <table>
+            <tr><th>Category</th><th>Scoring Rule</th><th>Points</th></tr>
+            <tr><td>Ones</td><td>Sum of all 1s rolled</td><td>0</td></tr>
+            <tr><td>Twos</td><td>Sum of all 2s rolled</td><td>0</td></tr>
+            <tr><td>Threes</td><td>Sum of all 3s rolled</td><td>0</td></tr>
+            <tr><td>Fours</td><td>Sum of all 4s rolled</td><td>0</td></tr>
+            <tr><td>Fives</td><td>Sum of all 5s rolled</td><td>0</td></tr>
+            <tr><td>Sixes</td><td>Sum of all 6s rolled</td><td>0</td></tr>
+            <tr><td>Three of a Kind</td><td>Three dice same number → sum all dice</td><td>0</td></tr>
+            <tr><td>Four of a Kind</td><td>Four dice same number → sum all dice</td><td>0</td></tr>
+            <tr><td>Full House</td><td>Three of a kind + pair → sum all dice</td><td>0</td></tr>
+            <tr><td>Small Straight</td><td>Sequence 1-2-3-4-5</td><td>0</td></tr>
+            <tr><td>Large Straight</td><td>Sequence 2-3-4-5-6</td><td>0</td></tr>
+            <tr><td>Chance</td><td>Sum of all dice</td><td>0</td></tr>
+            <tr><td>Yatzy</td><td>All five dice same number</td><td>0</td></tr>
+            <tr class="total-row"><td colspan="2"><strong>Total</strong></td><td><strong>0</strong></td></tr>
+        </table>
+    </section>
+</main>
 
-    // Test the engine scoring
-    const dice = new Dice(5);
-    const engine = new YatzyEngine();
-    const roll = dice.roll();
-    console.log("Test roll:", roll);
-    console.log("Yatzy score:", engine.calculateScore("Yatzy", roll));
-</script>
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>© 2025 Yatzy Modular Game by Lucas Muteta</p>
+</footer>
+
+<!-- === MODULE SCRIPTS === -->
+<script type="module" src="dice.js"></script>
+<script type="module" src="yatzyEngine.js"></script>
+<script type="module" src="yatzyGame.js"></script>
+
 </body>
 </html>
