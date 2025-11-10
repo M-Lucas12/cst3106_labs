@@ -1,70 +1,100 @@
 <!DOCTYPE html>
+<!-- Declares that this document is an HTML5 file -->
 <html lang="en">
 <head>
+    <!-- Metadata and linked resources for the web page -->
     <meta charset="UTF-8">
+    <!-- Defines the character encoding as UTF-8 (supports special symbols and emojis) -->
     <title>Yatzy Game Mock-up</title>
+    <!-- The title appears in the browser tab -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Links the external CSS file for styling -->
 </head>
+
 <body>
+<!-- Everything inside <body> is what will be displayed in the browser -->
+
+<!-- ===== HEADER SECTION ===== -->
 <header>
+    <!-- Contains the title and lab info for the page -->
     <h1>🎲 Yatzy Game Design</h1>
     <h3>Lab 05 </h3>
 </header>
 
+<!-- ===== MAIN CONTENT AREA ===== -->
 <main class="container">
-    <!-- 🎲 Left panel -->
+    <!-- The main layout container that holds two main sections: Dice Panel and Scoreboard -->
+
+    <!-- 🎲 LEFT PANEL: Dice Area -->
     <section id="dice-panel">
         <h2>Dice Panel</h2>
 
+        <!-- Row of dice visuals -->
         <div id="dice-row">
-            <!-- Face 1 -->
+
+            <!-- === Face 1 === -->
             <div class="die face1">
+                <!-- Each <span> will represent one dot on the die face -->
                 <span></span><span></span><span></span>
                 <span></span><span></span><span></span>
                 <span></span><span></span><span></span>
             </div>
-            <!-- Face 2 -->
+
+            <!-- === Face 2 === -->
             <div class="die face2">
                 <span></span><span></span><span></span>
                 <span></span><span></span><span></span>
                 <span></span><span></span><span></span>
             </div>
-            <!-- Face 3 -->
+
+            <!-- === Face 3 === -->
             <div class="die face3">
                 <span></span><span></span><span></span>
                 <span></span><span></span><span></span>
                 <span></span><span></span><span></span>
             </div>
-            <!-- Face 4 -->
+
+            <!-- === Face 4 === -->
             <div class="die face4">
                 <span></span><span></span><span></span>
                 <span></span><span></span><span></span>
                 <span></span><span></span><span></span>
             </div>
-            <!-- Face 5 -->
+
+            <!-- === Face 5 === -->
             <div class="die face5">
                 <span></span><span></span><span></span>
                 <span></span><span></span><span></span>
                 <span></span><span></span><span></span>
             </div>
+
+            <!-- Each 'die' div will be styled with CSS grid or flexbox
+                 to visually represent dice faces using dots (spans). -->
         </div>
     </section>
 
-    <!-- 📊 Right panel -->
+    <!-- 📊 RIGHT PANEL: Scoreboard -->
     <section id="scoreboard">
         <h2>Scoreboard</h2>
+
+        <!-- Table structure to show scoring categories and rules -->
         <table>
             <tr>
+                <!-- Table header row -->
                 <th>Category</th>
                 <th>Scoring Rule</th>
                 <th>Points</th>
             </tr>
+
+            <!-- Each following row shows a Yatzy scoring category -->
             <tr><td>Ones</td><td>Sum of all 1s rolled</td><td>0</td></tr>
             <tr><td>Twos</td><td>Sum of all 2s rolled</td><td>0</td></tr>
             <tr><td>Threes</td><td>Sum of all 3s rolled</td><td>0</td></tr>
             <tr><td>Fours</td><td>Sum of all 4s rolled</td><td>0</td></tr>
             <tr><td>Fives</td><td>Sum of all 5s rolled</td><td>0</td></tr>
             <tr><td>Sixes</td><td>Sum of all 6s rolled</td><td>0</td></tr>
+
+            <!-- Special scoring combinations -->
             <tr><td>Three of a Kind</td><td>Three dice same number → sum all dice</td><td>0</td></tr>
             <tr><td>Four of a Kind</td><td>Four dice same number → sum all dice</td><td>0</td></tr>
             <tr><td>Full House</td><td>Three of a kind + pair → sum all dice</td><td>0</td></tr>
@@ -72,13 +102,22 @@
             <tr><td>Large Straight</td><td>Sequence 2-3-4-5-6</td><td>0</td></tr>
             <tr><td>Chance</td><td>Sum of all dice</td><td>0</td></tr>
             <tr><td>Yatzy</td><td>All five dice same number</td><td>0</td></tr>
-            <tr class="total-row"><td colspan="2"><strong>Total</strong></td><td><strong>0</strong></td></tr>
+
+            <!-- Total score row -->
+            <tr class="total-row">
+                <!-- colspan merges two cells into one -->
+                <td colspan="2"><strong>Total</strong></td>
+                <td><strong>0</strong></td>
+            </tr>
         </table>
     </section>
 </main>
 
+<!-- ===== FOOTER SECTION ===== -->
 <footer>
     <p>© 2025 Yatzy Design Mock-up by Lucas Muteta</p>
+    <!-- Displays ownership and copyright -->
 </footer>
+
 </body>
 </html>

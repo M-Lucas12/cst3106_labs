@@ -1,175 +1,208 @@
-/* ==== Global Layout ==== */
+/* ============================================================
+   🌐 GLOBAL LAYOUT STYLES
+   These rules apply to the overall page structure and typography.
+   ============================================================ */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    background: linear-gradient(to bottom right, #eaf5ff, #ffffff);
-    color: #004B87;
+    font-family: 'Roboto', sans-serif;          /* Sets the main font for all text */
+    margin: 0;                                  /* Removes default browser margins */
+    background: linear-gradient(to bottom right, #eaf5ff, #ffffff); /* Light gradient background */
+    color: #004B87;                             /* Default text color (deep blue) */
 }
 
+/* ============================================================
+   🧱 HEADER SECTION
+   Styles for the title and Lab subtitle at the top of the page.
+   ============================================================ */
 header {
-    background-color: #5DA9E9;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 1px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: #5DA9E9;                  /* Sky blue header background */
+    color: white;                               /* White text for contrast */
+    text-align: center;                         /* Centers the title horizontally */
+    padding: 20px 0;                            /* Adds top and bottom space */
+    font-family: 'Poppins', sans-serif;         /* Uses a different font for titles */
+    letter-spacing: 1px;                        /* Slightly increases space between letters */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);      /* Subtle drop shadow under header */
 }
 
-/* Lab 5 subtitle under the title */
+/* Subtitle under the header title (Lab 05) */
 header h3 {
-    margin-top: 5px;
-    font-weight: 400;
-    font-size: 1rem;
-    color: #eaf5ff;
-    letter-spacing: 0.5px;
+    margin-top: 5px;                            /* Space between title and subtitle */
+    font-weight: 400;                           /* Normal weight for subtitle */
+    font-size: 1rem;                            /* Slightly smaller text */
+    color: #eaf5ff;                             /* Pale blue tone */
+    letter-spacing: 0.5px;                      /* Slight letter spacing for style */
 }
 
+/* ============================================================
+   📦 MAIN CONTAINER LAYOUT
+   This wraps both the Dice Panel (left) and Scoreboard (right).
+   ============================================================ */
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;   /* even heights */
-    height: calc(100vh - 120px);
-    padding: 20px;
-    box-sizing: border-box;
-    gap: 20px;
+    display: flex;                              /* Puts child sections side by side */
+    justify-content: space-between;             /* Adds space between left/right panels */
+    align-items: stretch;                       /* Ensures both panels match height */
+    height: calc(100vh - 120px);                /* Makes the container fill the page minus header/footer */
+    padding: 20px;                              /* Space around content */
+    box-sizing: border-box;                     /* Includes padding in total size */
+    gap: 20px;                                  /* Gap between the two panels */
 }
 
-/* ==== Left Panel (Dice) ==== */
+/* ============================================================
+   🎲 LEFT PANEL (Dice Area)
+   Contains dice visuals displayed in a grid layout.
+   ============================================================ */
 #dice-panel {
-    flex: 1;
-    background-color: #F2F4F7;
-    border-radius: 16px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    flex: 1;                                    /* Takes half of the available width */
+    background-color: #F2F4F7;                  /* Light gray background */
+    border-radius: 16px;                        /* Rounded corners */
+    padding: 20px;                              /* Space inside the panel */
+    display: flex;                              /* Uses flex layout for vertical centering */
+    flex-direction: column;                     /* Stack content top to bottom */
+    align-items: center;                        /* Center horizontally */
+    justify-content: center;                    /* Center vertically */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);    /* Adds soft shadow around panel */
 }
 
+/* Container for the row of dice */
 #dice-row {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 20px;
+    display: flex;                              /* Aligns dice horizontally */
+    justify-content: center;                    /* Centers dice group */
+    gap: 15px;                                  /* Space between each die */
+    flex-wrap: wrap;                            /* Allows dice to wrap on smaller screens */
+    margin-top: 20px;                           /* Space below heading */
 }
 
+/* === Individual Die Styling === */
 .die {
-    width: 70px;
+    width: 70px;                                /* Size of each die */
     height: 70px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    border: 2px solid #5DA9E9;
+    background-color: white;                    /* White face color */
+    border-radius: 12px;                        /* Rounded corners for smooth look */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);     /* 3D drop shadow for realism */
+    border: 2px solid #5DA9E9;                  /* Light blue border */
 
-    /* Dice face grid */
+    /* Set up a 3x3 grid to position the pips (dots) */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     padding: 10px;
     box-sizing: border-box;
-    justify-items: center;
-    align-items: center;
+    justify-items: center;                      /* Centers dots horizontally */
+    align-items: center;                        /* Centers dots vertically */
 
-    /* Hover animation base */
+    /* Hover animation setup */
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    cursor: pointer;
+    cursor: pointer;                            /* Changes cursor to indicate interactivity */
 }
 
-/* Hover lift effect */
+/* Hover effect: lifts the die slightly */
 .die:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    transform: translateY(-8px) scale(1.05);    /* Moves up and enlarges a bit */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* Stronger shadow for 3D lift effect */
 }
 
-/* Pips */
+/* === Pips (Dots on Dice Faces) === */
 .die span {
     width: 10px;
     height: 10px;
-    background-color: #004B87;
-    border-radius: 50%;
-    opacity: 0;                    /* hidden by default */
+    background-color: #004B87;                  /* Dark blue dot color */
+    border-radius: 50%;                         /* Makes each dot perfectly round */
+    opacity: 0;                                 /* Hidden by default (off state) */
 }
 
-/* Face mappings (grid spans are added in HTML in reading order 1..9) */
+/* === Dice Face Layouts === */
+/* Face 1 → single center dot */
 .face1 span:nth-child(5) { opacity: 1; }
 
+/* Face 2 → top-left and bottom-right */
 .face2 span:nth-child(1),
 .face2 span:nth-child(9) { opacity: 1; }
 
+/* Face 3 → diagonal (top-left, center, bottom-right) */
 .face3 span:nth-child(1),
 .face3 span:nth-child(5),
 .face3 span:nth-child(9) { opacity: 1; }
 
+/* Face 4 → four corners */
 .face4 span:nth-child(1),
 .face4 span:nth-child(3),
 .face4 span:nth-child(7),
 .face4 span:nth-child(9) { opacity: 1; }
 
+/* Face 5 → four corners + center */
 .face5 span:nth-child(1),
 .face5 span:nth-child(3),
 .face5 span:nth-child(5),
 .face5 span:nth-child(7),
 .face5 span:nth-child(9) { opacity: 1; }
 
-/* ==== Right Panel (Scoreboard) ==== */
+/* ============================================================
+   📊 RIGHT PANEL (Scoreboard)
+   Displays the scoring rules and points in a table.
+   ============================================================ */
 #scoreboard {
-    flex: 1;
-    background-color: #F2F4F7;
-    border-radius: 16px;
+    flex: 1;                                    /* Takes the other half of the space */
+    background-color: #F2F4F7;                  /* Matches dice panel */
+    border-radius: 16px;                        /* Rounded corners */
     padding: 20px;
-    overflow-y: auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow-y: auto;                           /* Enables scrolling if content overflows */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);    /* Same soft shadow */
     display: flex;
-    flex-direction: column;
+    flex-direction: column;                     /* Stack elements top to bottom */
 }
 
+/* Scoreboard Title */
 #scoreboard h2 {
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 15px;
-    text-align: center;
+    margin-bottom: 15px;                        /* Space below title */
+    text-align: center;                         /* Centers the heading */
 }
 
+/* === Table Styling === */
 table {
-    width: 100%;
-    border-collapse: collapse;
+    width: 100%;                                /* Table spans full width */
+    border-collapse: collapse;                  /* Removes gaps between borders */
     background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
+    border-radius: 8px;                         /* Rounded table edges */
+    overflow: hidden;                           /* Ensures border radius is visible */
 }
 
+/* Cells (both headers and data) */
 th, td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
+    padding: 10px;                              /* Inner space in cells */
+    border-bottom: 1px solid #ddd;              /* Light horizontal divider lines */
+    text-align: left;                           /* Aligns text to the left */
 }
 
+/* Table Header Row */
 th {
-    background-color: #5DA9E9;
-    color: white;
-    font-weight: 600;
+    background-color: #5DA9E9;                  /* Blue header background */
+    color: white;                               /* White header text */
+    font-weight: 600;                           /* Slightly bold */
 }
 
-td { color: #004B87; }
+/* Table Data */
+td { color: #004B87; }                          /* Blue text for readability */
 
-tr:hover { background-color: #eaf5ff; }
+/* Row hover effect (for interactivity) */
+tr:hover { background-color: #eaf5ff; }         /* Light blue on hover */
 
-/* Total row */
+/* Total row at the bottom */
 .total-row td {
-    background-color: #5DA9E9;
+    background-color: #5DA9E9;                  /* Blue background to stand out */
     color: white;
     font-weight: bold;
-    border: none;
+    border: none;                               /* Removes bottom line */
 }
 
-/* ==== Footer ==== */
+/* ============================================================
+   ⚓ FOOTER SECTION
+   Simple footer with consistent color scheme.
+   ============================================================ */
 footer {
-    background-color: #5DA9E9;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    background-color: #5DA9E9;                  /* Matches header color */
+    color: white;                               /* White text for contrast */
+    text-align: center;                         /* Centers text horizontally */
+    padding: 10px 0;                            /* Vertical spacing */
+    font-size: 14px;                            /* Smaller text size */
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);     /* Subtle shadow on top edge */
 }

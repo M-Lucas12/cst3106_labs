@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 2 – Yatzy Documentation | Lucas Muteta</title>
+
+    <!-- Reuse Project 1 design system -->
+    <link rel="stylesheet" href="../project1/styles.css" />
+
+    <style>
+        /* Page-local tweaks (kept minimal; design comes from Project 1 CSS) */
+        main { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        h1, h2 { color: #8b4513; border-bottom: 2px solid #8b4513; display: inline-block; padding-bottom: 4px; }
+
+        .screenshot {
+            width: 100%;
+            max-width: 720px;
+            border-radius: 10px;
+            margin: 14px 0;
+            border: 1px solid #ccc;
+        }
+
+        pre, code { background: #eee; padding: 10px; border-radius: 6px; }
+        .diagram, .codebox {
+            background: #fdfdfd;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px 25px;
+            font-family: "Courier New", monospace;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            color: #333;
+            white-space: pre-wrap;
+            margin-bottom: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>Project 2 – Yatzy Technical Documentation</h1>
+            <p>By Lucas Muteta</p>
+            <p>This page documents my Yatzy game from Assignments 1 and 2.</p>
+        </div>
+    </div>
+</header>
+
+<nav class="navbar">
+    <ul>
+        <!-- Root-relative so it always finds Project 1 regardless of current folder depth -->
+        <li><a href="/project1/index.html">← Back to Project 1</a></li>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#algorithms">Algorithms</a></li>
+        <li><a href="#tech">Technologies</a></li>
+        <li><a href="#reflection">Reflection</a></li>
+    </ul>
+</nav>
+
+<main>
+    <!-- ===== SUMMARY ===== -->
+    <section id="summary">
+        <h2>1) Yatzy Game Summary</h2>
+        <p>
+            Yatzy is a dice game where players roll five dice up to three times per turn to achieve scoring
+            combinations such as Three/Four of a Kind, Full House, Small/Large Straight, Chance, and Yatzy (five of a kind).
+            My implementation focuses on clear state management, reusable UI components, and accurate scoring logic
+            aligned with the assignment requirements.
+        </p>
+        <img class="screenshot" src="./assets/yatzy_overview.png" alt="Yatzy overview screenshot" />
+    </section>
+
+    <!-- ===== ARCHITECTURE ===== -->
+    <section id="architecture">
+        <h2>2) Architecture & State</h2>
+        <p>
+            The Yatzy game follows a modular structure inspired by the MVC pattern.
+            Each class handles a distinct responsibility — the game state, dice logic, and scoring system —
+            making the app easier to extend and maintain.
+        </p>
+
+        <div class="diagram">
+            GameState
+            │  currentRoll: int (0..3)
+            │  dice: List&lt;Die&gt; (5)
+            │  scores: Map&lt;Category, int?&gt;
+            │  availableCategories: Set&lt;Category&gt;
+            └─ roll(), hold(index), score(category)
+
+            Die
+            │  value: 1..6
+            │  held: bool
+            └─ toggleHold()
+
+            Category
+            │  ONES..SIXES, THREE_OF_A_KIND, FOUR_OF_A_KIND, FULL_HOUSE
+            │  SMALL_STRAIGHT, LARGE_STRAIGHT, CHANCE, YATZY
+            └─ compute(dice: int[5]) → int
+        </div>
+    </section>
+
+    <!-- ===== ALGORITHMS ===== -->
+    <section id="algorithms">
+        <h2>3) Key Scoring Algorithms</h2>
+        <p>The following core algorithms reflect the game logic I implemented in my assignments:</p>
+
+        <div class="codebox">
+            function fullHouse(dice):
+            counts = sort(tally(dice).values())
+            return 25 if (3 in counts and 2 in counts) else 0
+        </div>
+
+        <div class="codebox">
+            function smallStraight(dice):
+            s = set(dice)
+            return 30 if (
+            {1,2,3,4}.issubset(s) or {2,3,4,5}.issubset(s) or {3,4,5,6}.issubset(s)
+            ) else 0
+        </div>
+
+        <div class="codebox">
+            function yatzy(dice):
+            return 50 if len(set(dice)) == 1 else 0
+        </div>
+
+        <p style="font-size:.9rem;color:#666;margin-top:10px;">
+            These examples demonstrate scoring logic for three major categories (Full House, Straights, and Yatzy).
+            Each uses efficient state-based logic to compute player points.
+        </p>
+    </section>
+
+    <!-- ===== TECHNOLOGIES ===== -->
+    <section id="tech">
+        <h2>4) Technologies & Best Practices</h2>
+        <ul>
+            <li><b>HTML/CSS:</b> Semantic structure, comments, responsive layout (Flexbox, media queries).</li>
+            <li><b>JavaScript:</b> Dice roll, state updates, and scoring functions.</li>
+            <li><b>MVC Concepts:</b> Separation of data, UI, and logic for maintainability.</li>
+            <li><b>Accessibility (WCAG/ARIA):</b> Landmarks, alt text, and focus order for usability.</li>
+            <li><b>GitHub:</b> Version control, readable commits, and project tracking.</li>
+        </ul>
+    </section>
+
+    <!-- ===== REFLECTION ===== -->
+    <section id="reflection">
+        <h2>5) Reflection & Lessons Learned</h2>
+        <ul>
+            <li>Pure scoring functions made unit testing straightforward.</li>
+            <li>Separating logic from UI simplified adding features and debugging.</li>
+            <li>Accessibility and performance tweaks (alt text, smaller images) improved UX.</li>
+        </ul>
+        <p>Repository: <a href="https://github.com/M-Lucas12" target="_blank" rel="noopener">github.com/M-Lucas12</a></p>
+    </section>
+</main>
+
+</body>
+</html>

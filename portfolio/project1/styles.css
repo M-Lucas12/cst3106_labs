@@ -1,0 +1,197 @@
+/* ===== GLOBAL ===== */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin: 0 0 10px;
+}
+
+/* ===== HERO ===== */
+.hero {
+    background-color: #3c2f2f; /* deep brown */
+    color: white;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: contain;        /* show the full image instead of cropping */
+    object-position: center top;/* adjust which part is visible */
+    border: 4px solid white;
+    background-color: white;    /* fills the circle behind transparent areas */
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.tagline {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.summary {
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.95em;
+}
+
+.contact-info a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: #2e2424; /* slightly darker brown than header */
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #fff;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 3px;
+}
+
+.navbar a:hover {
+    color: #ffb84d;
+    border-bottom: 2px solid #ffb84d;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== SECTIONS ===== */
+section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+section h2 {
+    color: #8b4513;
+    border-bottom: 2px solid #8b4513;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* ===== SKILLS ===== */
+.skill-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: left;
+}
+
+.skill-columns ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* ===== EXPERIENCE ===== */
+.timeline {
+    border-left: 3px solid #8b4513;
+    margin-left: 30px;
+    padding-left: 20px;
+}
+
+.timeline-item {
+    margin-bottom: 25px;
+}
+
+.timeline-item h3 {
+    color: #333;
+}
+
+.timeline-item .time {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* ===== EDUCATION ===== */
+.edu-block {
+    margin-bottom: 20px;
+}
+
+/* ===== PROJECTS ===== */
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
