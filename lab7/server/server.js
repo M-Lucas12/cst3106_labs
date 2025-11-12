@@ -14,7 +14,7 @@ app.use(express.json());
 const clientDir = path.join(__dirname, "../client");
 app.use(express.static(clientDir));
 
-// Simple API to verify server <-> client
+// Simple API to verify server <-> client. Api exposes an end point
 app.get("/api/ping", (req, res) => {
     res.json({ ok: true, time: new Date().toISOString() });
 });
