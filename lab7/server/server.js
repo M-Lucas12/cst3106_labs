@@ -1,30 +1,36 @@
-// server/server.js  (CommonJS)
+// server/server.js
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
-// Middleware
+// Allow CORS (safe even if not needed)
 app.use(cors());
 app.use(express.json());
 
-// Serve the built-in client (our static files)
-const clientDir = path.join(__dirname, "../client");
-app.use(express.static(clientDir));
+// 🔹 Serve everything in ../client as static files (HTML, CSS, JS)
+app.use(express.static(path.join(__dirname, "..", "client")));
 
-// Simple API to verify server <-> client. Api exposes an end point
+// Health check (optional)
 app.get("/api/ping", (req, res) => {
-    res.json({ ok: true, time: new Date().toISOString() });
+    res.json({ status: "ok", message: "pong from Lab 7 server" });
 });
 
-// For any other route, return index.html (so refresh works)
-app.get("*", (_req, res) => {
-    res.sendFile(path.join(clientDir, "index.html"));
+// 🔹 Lab endpoint: return 5 random dice values [1..6]
+app.get("/roll-dices", (req, res) => {
+    const dice = Array.from({ length: 5 }, () =>
+        Math.floor(Math.random() * 6) + 1
+    );
+    res.json(dice);
 });
 
-// Start
+// For any other route, send index.html (so http://localhost:3000 works)
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "client", "index.html"));
+});
+
 app.listen(PORT, () => {
     console.log(`✅ Server running at http://localhost:${PORT}`);
 });
